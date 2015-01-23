@@ -1,0 +1,10 @@
+water = melons.Watermelon()
+cant = melons.Cantaloupe()
+casa = melons.Casaba()
+shar = melons.Sharlyn()
+santa = melons.SantaClaus()
+christ = melons.Christmas()
+horn = melons.HornedMelon()
+xiggy = melons.Xigua()
+og = melons.Ogen()
+
