@@ -6,7 +6,19 @@
 #Determine price for this quantity of melons of this type.
 #Return a float of the total price.
 # 
+
+
+
+
 class Melons(object):
+
+    #SUPER FANCY way to check all of the species attributes in the subclasses
+    #and then make it if you can
+    #if not, i'll return an error message
+    #didn't add it yet though
+    def __init__(self):
+         self.species
+
     def get_base(self):
         base = 5.00
         return base
