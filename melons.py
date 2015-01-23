@@ -6,10 +6,12 @@
 #Determine price for this quantity of melons of this type.
 #Return a float of the total price.
 # 
+class Melons(object):
+    def get_base(self):
+        base = 5.00
+        return base
 
-BASE_MELON_COST = 5.00
-
-class Watermelon(object):
+class Watermelon(Melons):
     species = "watermelon"
     color = "green"
     imported = False
@@ -18,13 +20,13 @@ class Watermelon(object):
 
     def get_price(self, qty):
 
-        cost =  BASE_MELON_COST * qty
+        cost = super(Watermelon, self).get_base()  * qty
         if qty >= 3:
             cost = cost * .75
         return cost
 
 
-class Canteloupe(object):
+class Cantaloupe(Melons):
     species = "canteloupe"
     color = "tan"
     imported = False
@@ -33,12 +35,12 @@ class Canteloupe(object):
 
     def get_price(self, qty):
 
-        cost =  BASE_MELON_COST * qty
+        cost = super(Cantaloupe, self).get_base() * qty
         if qty >= 5:
             cost = cost * .5
         return cost
 
-class Casaba(object):
+class Casaba(Melons):
     species = "casaba"
     color = "green"
     imported = True
@@ -47,11 +49,11 @@ class Casaba(object):
 
     def get_price(self, qty):
 
-        cost =  (BASE_MELON_COST + 1) * 1.5 * qty
+        cost =  (super(Casaba, self).get_base() + 1) * 1.5 * qty
         return cost
 
 
-class Sharlyn(object):
+class Sharlyn(Melons):
     species = "sharlyn"
     color = "tan"
     imported = True
@@ -60,11 +62,11 @@ class Sharlyn(object):
     
     def get_price(self, qty):
         
-        cost =  (BASE_MELON_COST) * 1.5 * qty
+        cost =  super(Sharlyn, self).get_base() * 1.5 * qty
         return cost
 
 
-class SantaClaus(object):
+class SantaClaus(Melons):
     species = "santa claus"
     color = "green"
     imported = True
@@ -73,10 +75,10 @@ class SantaClaus(object):
 
     def get_price(self, qty):
         
-        cost =  (BASE_MELON_COST) * 1.5 * qty
+        cost =  super(SantaClaus, self).get_base()  * 1.5 * qty
         return cost
 
-class Christmas(object):
+class Christmas(Melons):
     species = "christmas"
     color = "green"
     imported = False
@@ -85,11 +87,11 @@ class Christmas(object):
 
     def get_price(self, qty):
 
-        cost = BASE_MELON_COST * qty
+        cost = super(Christmas, self).get_base()  * qty
         return cost
 
 
-class HornedMelon(object):
+class HornedMelon(Melons):
     species = "horned melon"
     color = "yellow"
     imported = True
@@ -98,11 +100,11 @@ class HornedMelon(object):
     
     def get_price(self, qty):
         
-        cost =  (BASE_MELON_COST) * 1.5 * qty
+        cost =  super(HornedMelon, self).get_base() * 1.5 * qty
         return cost
 
 
-class Xigua(object):
+class Xigua(Melons):
     species = "xigua"
     color = "black"
     imported = True
@@ -111,11 +113,11 @@ class Xigua(object):
 
     def get_price(self, qty):
 #cost is the base cost times 1.5 for importing and times 2 for imported
-        cost =  (BASE_MELON_COST) * 1.5 * 2 * qty
+        cost = super(Xigua, self).get_base()  * 1.5 * 2 * qty
         return cost
 
 
-class Ogen(object):
+class Ogen(Melons):
     species = "ogen"
     color = "tan"
     imported = False
@@ -123,19 +125,7 @@ class Ogen(object):
     season = ['Spring', 'Summer']
 
     def get_price(self, qty):
-        cost =  (BASE_MELON_COST + 1) * qty
+        cost =  (super(Ogen, self).get_base()  + 1) * qty
         return cost
 
 
-
-# melons = [
-#     ('Watermelon', 'green', False, 'natural', ['Fall', 'Summer']),
-#     ('Cantaloupe', 'tan', False, 'natural', ['Spring', 'Summer']),
-#     ('Casaba', 'green', True, 'natural', ['Spring', 'Summer', 'Fall', 'Winter']),
-#     ('Sharlyn', 'tan', True, 'natural', ['Summer']),
-#     ('Santa Claus', 'green', True, 'natural', ['Winter', 'Spring']),
-#     ('Christmas', 'green', False, 'natural', ['Winter']),
-#     ('Horned Melon', 'yellow', True, 'natural', ['Summer']),
-#     ('Xigua', 'black', True, 'square', ['Summer']),
-#     ('Ogen', 'tan', False, 'natural', ['Spring', 'Summer'])
-# ]
