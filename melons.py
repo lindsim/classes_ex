@@ -3,10 +3,9 @@
 # Add a method with the following signature:
 
 # def get_price(qty):
-#     """Determine price for this quantity of melons of this type.
-
-#     Return a float of the total price.
-#     """
+#Determine price for this quantity of melons of this type.
+#Return a float of the total price.
+# 
 
 BASE_MELON_COST = 5.00
 
@@ -17,9 +16,7 @@ class Watermelon(object):
     shape = "natural"
     season = ['Fall', 'Summer']
 
-    def get_price(qty):
-    # """Determine price for this quantity of melons of this type.
-    # Return a float of the total price."""
+    def get_price(self, qty):
 
         cost =  BASE_MELON_COST * qty
         if qty >= 3:
@@ -36,7 +33,6 @@ class Canteloupe(object):
 
     def get_price(self, qty):
 
-
         cost =  BASE_MELON_COST * qty
         if qty >= 5:
             cost = cost * .5
@@ -49,12 +45,24 @@ class Casaba(object):
     shape = "natural"
     season = ['Spring', 'Summer', 'Fall', 'Winter']
 
+    def get_price(self, qty):
+
+        cost =  (BASE_MELON_COST + 1) * 1.5 * qty
+        return cost
+
+
 class Sharlyn(object):
     species = "sharlyn"
     color = "tan"
     imported = True
     shape = "natural"
     season = [ 'Summer']
+    
+    def get_price(self, qty):
+        
+        cost =  (BASE_MELON_COST) * 1.5 * qty
+        return cost
+
 
 class SantaClaus(object):
     species = "santa claus"
@@ -63,6 +71,11 @@ class SantaClaus(object):
     shape = "natural"
     season = ['Winter', 'Spring']
 
+    def get_price(self, qty):
+        
+        cost =  (BASE_MELON_COST) * 1.5 * qty
+        return cost
+
 class Christmas(object):
     species = "christmas"
     color = "green"
@@ -70,12 +83,24 @@ class Christmas(object):
     shape = "natural"
     season = ['Winter']
 
+    def get_price(self, qty):
+
+        cost = BASE_MELON_COST * qty
+        return cost
+
+
 class HornedMelon(object):
     species = "horned melon"
     color = "yellow"
     imported = True
     shape = "natural"
     season = ['Summer']
+    
+    def get_price(self, qty):
+        
+        cost =  (BASE_MELON_COST) * 1.5 * qty
+        return cost
+
 
 class Xigua(object):
     species = "xigua"
@@ -84,12 +109,23 @@ class Xigua(object):
     shape = "square"
     season = ['Summer']
 
+    def get_price(self, qty):
+#cost is the base cost times 1.5 for importing and times 2 for imported
+        cost =  (BASE_MELON_COST) * 1.5 * 2 * qty
+        return cost
+
+
 class Ogen(object):
     species = "ogen"
     color = "tan"
     imported = False
     shape = "natural"
     season = ['Spring', 'Summer']
+
+    def get_price(self, qty):
+        cost =  (BASE_MELON_COST + 1) * qty
+        return cost
+
 
 
 # melons = [
